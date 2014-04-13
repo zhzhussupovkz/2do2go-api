@@ -30,7 +30,7 @@ class MainApi {
 	*/
 	private function send_request($method, $params) {
 		$token = array('access_token' => $this->access_token);
-		$params = array_merge($token, $params);
+		$data = array_merge($token, $params);
 		$header = array(
 			'Content-Type: application/json',
 			);
@@ -41,6 +41,8 @@ class MainApi {
 			CURLOPT_URL => $url,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_SSL_VERIFYPEER => 0,
+			CURLOPT_POSTFIELDS => $data,
+			CURLOPT_HTTPHEADER => $header,
 		);
 		$ch = curl_init();
 		curl_setopt_array($ch, $options);
