@@ -11,7 +11,7 @@ class Auth {
 	private $client_id;
 
 	//client secret
-	private $client_secre;
+	private $client_secret;
 
 	//auth url
 	private $auth_url = 'https://auth2do2go.fitdev.ru';
